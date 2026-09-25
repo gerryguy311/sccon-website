@@ -84,14 +84,14 @@
   .links a{color:#c7d2e3;text-decoration:none;font-size:.92rem;font-weight:400}
   .links a:hover{color:#fff}
   .links a.btn-sun,.links a.btn-sun:hover{color:#1a1206}
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:600;font-size:.95rem;text-decoration:none;transition:transform .15s ease,box-shadow .15s ease,background .15s;border:0;cursor:pointer}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:600;font-size:.95rem;text-decoration:none;transition:transform .15s ease,box-shadow .15s ease,background .15s;border:0;cursor:pointer;white-space:nowrap}
   .btn:hover{transform:translateY(-1px)}
   .btn-sun{background:linear-gradient(135deg,var(--sun),var(--coral));color:#1a1206;box-shadow:0 8px 24px rgba(255,122,89,.28)}
   .btn-ghost{background:rgba(255,255,255,.06);color:var(--text);border:1px solid rgba(255,255,255,.18)}
   .btn-ghost:hover{background:rgba(255,255,255,.12)}
   .nav .btn{padding:9px 18px;font-size:.88rem}
   .menu-btn{display:none;background:none;border:0;color:var(--text);padding:8px;cursor:pointer}
-  @media (max-width:900px){
+  @media (max-width:1040px){
     .links{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--night);border-bottom:1px solid var(--line);padding:8px 20px 18px}
     .links.open{display:flex}
     .links a{padding:12px 0;border-bottom:1px solid var(--line);font-size:1rem}
@@ -144,13 +144,21 @@
   .badge{position:absolute;top:-12px;right:22px;background:var(--sun);color:#1a1206;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:5px 12px;border-radius:999px}
 
   /* timeline */
-  .days{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .days{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media (max-width:980px){.days{grid-template-columns:1fr 1fr}.days .eve{grid-column:1/-1}}
   @media (max-width:760px){.days{grid-template-columns:1fr}}
   .day h3{display:flex;align-items:baseline;gap:10px;margin-bottom:16px}
   .day h3 small{color:var(--sun);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
   .slot{display:grid;grid-template-columns:92px 1fr;gap:12px;padding:10px 0;border-top:1px solid var(--line)}
   .slot b{font-weight:500;color:var(--sea);font-size:.92rem}
   .slot span{color:#d3dbe8}
+
+  /* sessionize embeds (they render light, so give them a light card) */
+  .sz-wrap{margin-top:28px;background:#fff;color:#1b2432;border-radius:var(--radius);padding:20px;overflow-x:auto;-webkit-overflow-scrolling:touch;font-weight:400}
+  .sz-wrap a{color:#1f6fd1}
+  .sub{font-size:1.35rem;margin:48px 0 4px}
+  .sub + p{color:var(--muted);margin:0}
+  @media (max-width:620px){.sz-wrap{padding:12px;margin-left:-8px;margin-right:-8px}}
 
   /* stay */
   .stay-list{list-style:none;padding:0;margin:0}
@@ -211,9 +219,11 @@
       <a href="#about">About</a>
       <a href="#tickets">Tickets</a>
       <a href="#schedule">Schedule</a>
+      <a href="#speakers">Speakers</a>
       <a href="#stay">Stay</a>
       <a href="#sponsors">Sponsors</a>
       <a href="#faq">FAQ</a>
+      <a href="#donate">Donate</a>
       <a class="btn btn-sun" href="https://www.zeffy.com/en-US/ticketing/simply-cyber-con--2026" target="_blank" rel="noopener">Get tickets</a>
     </div>
   </div>
@@ -295,7 +305,7 @@
         <ul>
           <li>Full two-day program, both speaker tracks</li>
           <li>Breakfast and lunch on Day 1 and Day 2</li>
-          <li>Evening events and the hallway track</li>
+          <li>Saturday welcome reception, open mic night, and the hallway track</li>
           <li>Oceanfront venue at Tides Folly Beach</li>
         </ul>
         <a class="btn btn-sun" href="https://www.zeffy.com/en-US/ticketing/simply-cyber-con--2026" target="_blank" rel="noopener">Register on Zeffy</a>
@@ -322,9 +332,14 @@
     <div class="head">
       <span class="eyebrow">Two tracks. Endless possibilities.</span>
       <h2>The weekend at a glance.</h2>
-      <p class="lede">Practitioners, leaders, and rising stars sharing their stories, tools, and hard-won wisdom. Sessions strike the balance between advancing your career and sharpening your technical edge. Full agenda coming soon.</p>
+      <p class="lede">Practitioners, leaders, and rising stars sharing their stories, tools, and hard-won wisdom. Sessions strike the balance between advancing your career and sharpening your technical edge.</p>
     </div>
     <div class="days">
+      <div class="card day eve">
+        <h3>Saturday <small>Nov 7 &middot; Kickoff</small></h3>
+        <div class="slot"><b>7:30 PM</b><span>Welcome reception. Come early, meet #TeamSC, and start the weekend right.</span></div>
+        <div class="slot"><b>Earlier</b><span>BSides Charleston runs downtown that day, about 20 minutes away. Make a weekend of it.</span></div>
+      </div>
       <div class="card day">
         <h3>Sunday <small>Nov 8 &middot; Day 1</small></h3>
         <div class="slot"><b>8:00 AM</b><span>Check-in opens during breakfast</span></div>
@@ -342,6 +357,11 @@
         <div class="slot"><b>After</b><span>Unofficial happy hour at the con hotel or nearby</span></div>
       </div>
     </div>
+    <h3 class="sub">Session schedule</h3>
+    <p>Both tracks, every talk. Tap a session for the abstract and speaker details. Times are Eastern.</p>
+    <div class="sz-wrap">
+      <script type="text/javascript" src="https://sessionize.com/api/v2/j2hgkhsf/view/GridSmart"></script>
+    </div>
   </div>
 </section>
 
@@ -349,21 +369,11 @@
   <div class="wrap">
     <div class="head">
       <span class="eyebrow">Speakers</span>
-      <h2>The lineup is landing now.</h2>
-      <p class="lede">We're announcing speakers as they confirm. Follow Simply Cyber Con on <a href="https://www.linkedin.com/company/simply-cyber-con/" target="_blank" rel="noopener">LinkedIn</a> or hop in the <a href="https://discord.gg/nxQaEGnyqy" target="_blank" rel="noopener">Discord</a> so you don't miss one.</p>
+      <h2>Meet the speakers.</h2>
+      <p class="lede">Practitioners, leaders, and first-time speakers from across the community. Tap anyone to see their bio and talk. Follow Simply Cyber Con on <a href="https://www.linkedin.com/company/simply-cyber-con/" target="_blank" rel="noopener">LinkedIn</a> or hop in the <a href="https://discord.gg/nxQaEGnyqy" target="_blank" rel="noopener">Discord</a> to meet them before the con.</p>
     </div>
-    <div class="speakers">
-      <!--
-        To add a speaker, copy this block, drop a square photo in public/assets/speakers/,
-        and remove the comment markers.
-
-      <div class="card speaker">
-        <img src="/assets/speakers/first-last.webp" alt="First Last" loading="lazy" width="400" height="400">
-        <h3>First Last</h3>
-        <div class="role">Title, Company</div>
-        <div class="talk">Talk title goes here</div>
-      </div>
-      -->
+    <div class="sz-wrap">
+      <script type="text/javascript" src="https://sessionize.com/api/v2/j2hgkhsf/view/SpeakerWall"></script>
     </div>
   </div>
 </section>
@@ -429,7 +439,22 @@
   </div>
 </section>
 
-<section id="faq">
+<section id="donate">
+  <div class="wrap">
+    <div class="cta-band" style="margin-top:0;padding:40px">
+      <div style="max-width:620px">
+        <span class="eyebrow">Support the con</span>
+        <h2 style="font-size:clamp(1.6rem,3.6vw,2.2rem)">Help keep the ticket at $50.</h2>
+        <p>Simply Cyber Con is volunteer-run and nonprofit. Tickets don't cover what it costs to put on two days of talks, meals, and evening events, so sponsors and people like you close the gap. Every dollar goes back into the con.</p>
+      </div>
+      <div class="ctas">
+        <a class="btn btn-sun" href="https://hcb.hackclub.com/donations/start/simplycybercon" target="_blank" rel="noopener">Donate</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="alt">
   <div class="wrap">
     <div class="head">
       <span class="eyebrow">FAQ</span>
@@ -461,6 +486,10 @@
         <p>The conference officially ends at 5:00 PM on Monday, November 9. There's an unofficial happy hour afterward at the con hotel or a local spot within walking distance.</p>
       </details>
       <details>
+        <summary>Is there a code of conduct?</summary>
+        <p>Yes. Everyone at Simply Cyber Con, in person and online, agrees to our <a href="/code-of-conduct/">Code of Conduct</a>. It also explains how to reach an organizer if something goes wrong.</p>
+      </details>
+      <details>
         <summary>Can I connect with other attendees before the con?</summary>
         <p>Yes. Join the official <a href="https://discord.gg/nxQaEGnyqy" target="_blank" rel="noopener">Simply Cyber Con Discord</a>, open now through the event. Virtual attendees are encouraged to hang out there during the talks too.</p>
       </details>
@@ -484,6 +513,8 @@
         <a href="https://discord.gg/nxQaEGnyqy" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.3 4.4A19.8 19.8 0 0015.4 3l-.6 1.3a18.4 18.4 0 00-5.6 0L8.6 3a19.7 19.7 0 00-4.9 1.4C.6 9 -.3 13.5.1 18a19.9 19.9 0 006 3l1.3-2.1a13 13 0 01-2-1l.5-.4a14.2 14.2 0 0012.2 0l.5.4a13 13 0 01-2 1l1.3 2.1a19.8 19.8 0 006-3c.5-5.2-.9-9.7-3.6-13.6zM8 15.3c-1.2 0-2.2-1.1-2.2-2.4S6.8 10.4 8 10.4s2.2 1.1 2.2 2.5-1 2.4-2.2 2.4zm8 0c-1.2 0-2.2-1.1-2.2-2.4s1-2.5 2.2-2.5 2.2 1.1 2.2 2.5-1 2.4-2.2 2.4z"/></svg>Discord</a>
         <a href="https://www.linkedin.com/company/simply-cyber-con/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 110-4.2 2.1 2.1 0 010 4.2zM7.1 20.5H3.6V9h3.5v11.5zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0z"/></svg>LinkedIn</a>
         <a href="https://www.youtube.com/@SimplyCyberCon" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>YouTube</a>
+        <a href="https://hcb.hackclub.com/donations/start/simplycybercon" target="_blank" rel="noopener">Donate</a>
+        <a href="/code-of-conduct/">Code of Conduct</a>
         <a href="https://simplycyber.io" target="_blank" rel="noopener">simplycyber.io</a>
       </div>
     </div>

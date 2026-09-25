@@ -16,8 +16,9 @@ wrangler.jsonc     Cloudflare config
 
 ## Common edits
 
-- **Add a speaker:** copy the commented speaker block in the `#speakers` section
-  of `public/index.html`, put a square photo in `public/assets/speakers/`.
+- **Schedule and speakers:** both come from Sessionize (event `j2hgkhsf`, views
+  GridSmart and SpeakerWall). Edit sessions, times and speakers in Sessionize and
+  the site updates on its own. No code change or deploy needed.
 - **Add a sponsor logo:** drop the file in `public/assets/sponsors/`, replace the
   company name inside its `<a class="sponsor">` with an `<img>`.
 - **Next year:** update dates in the hero, schedule, FAQ, the JSON-LD block in
