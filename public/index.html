@@ -535,6 +535,20 @@
     });
   })();
 
+  // Sessionize's loader only fills the first embed on a page. When it
+  // finishes the schedule grid, nudge it again so the speaker wall loads too.
+  (function(){
+    var last=null, tries=0;
+    function step(){
+      var q=document.querySelectorAll('[data-sessionize-load-url]');
+      if(!q.length) return;
+      if(last===null){ last=q[0]; }
+      else if(q[0]!==last && window.sessionize && sessionize.loader){ last=q[0]; sessionize.loader(); }
+      if(++tries<200) setTimeout(step,250);
+    }
+    window.addEventListener('load',step);
+  })();
+
   // Countdown to check-in, 8:00 AM Eastern on Nov 8, 2026
   (function(){
     var target=Date.parse('2026-11-08T08:00:00-05:00');
