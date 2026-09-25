@@ -1,0 +1,19 @@
+{
+  // Cloudflare Workers static assets config for simplycybercon.org
+  // Docs: https://developers.cloudflare.com/workers/static-assets/
+  "name": "simplycybercon",
+  "compatibility_date": "2026-09-25",
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "404-page"
+  }
+  // STEP 2 (after simplycybercon.org is an Active zone in Cloudflare):
+  // add a comma after the "assets" block above, then uncomment the routes
+  // below. The next deploy attaches the custom domains and creates the DNS
+  // records, which is the moment the site moves off Carrd.
+  //
+  // "routes": [
+  //   { "pattern": "simplycybercon.org", "custom_domain": true },
+  //   { "pattern": "www.simplycybercon.org", "custom_domain": true }
+  // ]
+}
