@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Simply Cyber Con 2026 | Nov 8-9 | Folly Beach, SC</title>
-<meta name="description" content="Simply Cyber Con 2026: the cyber con that feels like coming home. November 8-9, 2026 at Tides Folly Beach, SC. $50 in person, free to watch online.">
+<meta name="description" content="Simply Cyber Con 2026: the cyber con that feels like coming home. November 8-9, 2026 at Tides Folly Beach, SC. In-person tickets are sold out. Watch free online on YouTube.">
 <link rel="canonical" href="https://simplycybercon.org/">
 <meta property="og:title" content="Simply Cyber Con 2026">
 <meta property="og:description" content="The cyber con that feels like coming home. Nov 8-9, 2026. Tides Folly Beach, SC.">
@@ -40,8 +40,8 @@
   "description": "A community-built cybersecurity conference by practitioners, for practitioners.",
   "organizer": {"@type": "Organization", "name": "Simply Cyber Con", "url": "https://simplycybercon.org"},
   "offers": [
-    {"@type": "Offer", "name": "In-person General Admission", "price": "50", "priceCurrency": "USD", "url": "https://www.zeffy.com/en-US/ticketing/simply-cyber-con--2026"},
-    {"@type": "Offer", "name": "Virtual", "price": "0", "priceCurrency": "USD", "url": "https://www.youtube.com/@SimplyCyberCon"}
+    {"@type": "Offer", "name": "In-person General Admission", "price": "50", "priceCurrency": "USD", "availability": "https://schema.org/SoldOut", "url": "https://www.zeffy.com/en-US/ticketing/simply-cyber-con--2026"},
+    {"@type": "Offer", "name": "Virtual", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://www.youtube.com/@SimplyCyberCon"}
   ]
 }
 </script>
@@ -119,7 +119,9 @@
   .count div{min-width:84px;padding:12px 10px;border-radius:14px;background:rgba(18,10,51,.35);border:1px solid rgba(255,94,196,.3)}
   .count b{display:block;font-size:1.7rem;font-weight:600;color:#fff;line-height:1.1}
   .count small{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#d9c8f2}
-  .hero .incl{margin:12px 0 0;color:#ffd08a;font-size:.95rem;font-weight:500}
+  .hero .soldout{margin:6px 0 4px;color:#f3ecff;font-size:1.05rem}
+  .hero .soldout span{display:inline-block;margin-right:8px;padding:5px 14px;border-radius:999px;background:#ff5ec4;color:#1a0628;font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:.85rem}
+  .btn-soldout{background:rgba(255,255,255,.08);color:#c9bfe0;border:1px dashed rgba(255,255,255,.3);cursor:default;text-align:center}
   .stream{margin-top:18px;display:flex;gap:10px;justify-content:center;align-items:center;flex-wrap:wrap;color:#d9c8f2;font-size:.95rem}
   .stream .btn{padding:9px 16px;font-size:.92rem}
   @media (max-width:480px){.count{gap:8px}.count div{min-width:0;flex:1;padding:10px 4px}.count b{font-size:1.35rem}.count small{font-size:.6rem;letter-spacing:.08em}}
@@ -233,7 +235,7 @@
       <a href="#merch">Merch</a>
       <a href="#faq">FAQ</a>
       <a href="#donate">Donate</a>
-      <a class="btn btn-sun" href="https://www.zeffy.com/en-US/ticketing/simply-cyber-con--2026" target="_blank" rel="noopener">Get tickets</a>
+      <a class="btn btn-sun" href="#tickets">Watch free</a>
     </div>
   </div>
 </nav>
@@ -241,20 +243,17 @@
 <header class="hero" id="top">
   <div class="wrap">
     <h1 class="sr-only">Simply Cyber Con 2026</h1>
-    <a class="banner" href="https://www.zeffy.com/en-US/ticketing/simply-cyber-con--2026" target="_blank" rel="noopener">
+    <div class="banner">
       <img src="/assets/hero-banner.jpg" alt="Simply Cyber Con logo: neon synthwave sunset over a grid" width="1920" height="1080" fetchpriority="high">
-    </a>
+    </div>
     <span class="kicker">Year three &middot; #TeamSC</span>
     <p class="tag">The cyber con that feels like coming home.</p>
     <p class="when"><b>November 8 &amp; 9, 2026</b> &middot; Tides Folly Beach, South Carolina</p>
-    <div class="ctas">
-      <a class="btn btn-sun" href="https://www.zeffy.com/en-US/ticketing/simply-cyber-con--2026" target="_blank" rel="noopener">Get your $50 ticket</a>
-    </div>
-    <p class="incl">Includes breakfast and lunch both days</p>
+    <p class="soldout"><span>Sold out</span> In-person tickets are gone. Thank you, #TeamSC!</p>
     <div class="stream">
       <span>Watch free on YouTube:</span>
-      <a class="btn btn-ghost" href="https://www.youtube.com/@simplycybercon" target="_blank" rel="noopener">Track 1 &middot; @SimplyCyberCon</a>
-      <a class="btn btn-ghost" href="https://www.youtube.com/@simplycybercafe" target="_blank" rel="noopener">Track 2 &middot; @SimplyCyberCafe</a>
+      <a class="btn btn-sun" href="https://www.youtube.com/@simplycybercon" target="_blank" rel="noopener">Track 1 &middot; @SimplyCyberCon</a>
+      <a class="btn btn-sun" href="https://www.youtube.com/@simplycybercafe" target="_blank" rel="noopener">Track 2 &middot; @SimplyCyberCafe</a>
     </div>
     <div class="count" id="countdown" aria-label="Countdown to Simply Cyber Con">
       <div><b data-u="d">--</b><small>Days</small></div>
@@ -315,8 +314,8 @@
       <p class="lede">We keep in-person tickets cheap on purpose so anyone can show up, whatever stage of their career they're in.</p>
     </div>
     <div class="grid g2">
-      <div class="card ticket featured">
-        <span class="badge">Best seat</span>
+      <div class="card ticket">
+        <span class="badge">Sold out</span>
         <h3>In person</h3>
         <div class="price">$50 <small>/ both days</small></div>
         <ul>
@@ -325,9 +324,11 @@
           <li>Saturday welcome reception, karaoke and open mic night, and the hallway track</li>
           <li>Oceanfront venue at Tides Folly Beach</li>
         </ul>
-        <a class="btn btn-sun" href="https://www.zeffy.com/en-US/ticketing/simply-cyber-con--2026" target="_blank" rel="noopener">Register on Zeffy</a>
+        <span class="btn btn-soldout" aria-disabled="true">Sold out</span>
+        <p style="margin:12px 0 0;color:#d3dbe8;font-size:.92rem">Already have a ticket? Check-in opens at 8:00 AM Sunday during breakfast.</p>
       </div>
-      <div class="card ticket">
+      <div class="card ticket featured">
+        <span class="badge">Still open</span>
         <h3>Virtual</h3>
         <div class="price">Free</div>
         <ul>
@@ -505,7 +506,7 @@
     <div class="faq">
       <details>
         <summary>How can I attend?</summary>
-        <p>Register to attend in person for $50 on <a href="https://www.zeffy.com/en-US/ticketing/simply-cyber-con--2026" target="_blank" rel="noopener">Zeffy</a>, or watch free on YouTube. Track 1 streams on <a href="https://www.youtube.com/@simplycybercon" target="_blank" rel="noopener">Simply Cyber Con</a> and Track 2 streams on <a href="https://www.youtube.com/@simplycybercafe" target="_blank" rel="noopener">Simply Cyber Cafe</a>. Subscribe to both to get notified when we go live. Recordings stay available on YouTube.</p>
+        <p>In-person tickets are sold out. You can still watch every talk free on YouTube. Track 1 streams on <a href="https://www.youtube.com/@simplycybercon" target="_blank" rel="noopener">Simply Cyber Con</a> and Track 2 streams on <a href="https://www.youtube.com/@simplycybercafe" target="_blank" rel="noopener">Simply Cyber Cafe</a>. Subscribe to both to get notified when we go live. Recordings stay available on YouTube.</p>
       </details>
       <details>
         <summary>What's included?</summary>
