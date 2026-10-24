@@ -160,8 +160,9 @@
   .slot span{color:#d3dbe8}
 
   /* sessionize embeds (they render light, so give them a light card) */
-  .sz-wrap{margin-top:28px;background:#fff;color:#1b2432;border-radius:var(--radius);padding:20px;overflow-x:auto;-webkit-overflow-scrolling:touch;font-weight:400}
-  .sz-wrap a{color:#1f6fd1}
+  /* Sessionize embeds: dark panel to match the Sessionize "dark background" theme */
+  .sz-wrap{margin-top:28px;background:#130a2e;color:#f3ecff;border:1px solid rgba(255,94,196,.28);box-shadow:0 20px 50px rgba(0,0,0,.35);border-radius:var(--radius);padding:20px;overflow-x:auto;-webkit-overflow-scrolling:touch;font-weight:400}
+  .sz-wrap a{color:inherit}
   .sub{font-size:1.35rem;margin:48px 0 4px}
   .sub + p{color:var(--muted);margin:0}
   @media (max-width:620px){.sz-wrap{padding:12px;margin-left:-8px;margin-right:-8px}}
