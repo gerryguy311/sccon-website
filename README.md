@@ -19,8 +19,9 @@ wrangler.jsonc     Cloudflare config
 - **Schedule and speakers:** both come from Sessionize (event `j2hgkhsf`, views
   GridSmart and SpeakerWall). Edit sessions, times and speakers in Sessionize and
   the site updates on its own. No code change or deploy needed.
-- **Add a sponsor logo:** drop the file in `public/assets/sponsors/`, replace the
-  company name inside its `<a class="sponsor">` with an `<img>`.
+- **Add a sponsor logo:** drop the file in `public/assets/sponsors/`, then copy
+  one of the `<a class="sponsor">` lines in the Sponsors section and point it at
+  the new file and the sponsor's link.
 - **Next year:** update dates in the hero, schedule, FAQ, the JSON-LD block in
   `<head>`, and the countdown target near the bottom of `index.html`.
 
