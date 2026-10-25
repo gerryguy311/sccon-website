@@ -6,14 +6,11 @@
   "assets": {
     "directory": "./public",
     "not_found_handling": "404-page"
-  }
-  // STEP 2 (after simplycybercon.org is an Active zone in Cloudflare):
-  // add a comma after the "assets" block above, then uncomment the routes
-  // below. The next deploy attaches the custom domains and creates the DNS
-  // records, which is the moment the site moves off Carrd.
-  //
-  // "routes": [
-  //   { "pattern": "simplycybercon.org", "custom_domain": true },
-  //   { "pattern": "www.simplycybercon.org", "custom_domain": true }
-  // ]
+  },
+  // Custom domains. Deploying attaches these to the worker and creates their
+  // DNS records in the simplycybercon.org zone. Cut over from Carrd 2026-10-25.
+  "routes": [
+    { "pattern": "simplycybercon.org", "custom_domain": true },
+    { "pattern": "www.simplycybercon.org", "custom_domain": true }
+  ]
 }
